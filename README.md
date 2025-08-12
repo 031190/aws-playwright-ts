@@ -35,22 +35,6 @@ npm install
 Create a `.env` file based on `.env.example`:
 
 ```bash
-
-SQS_QUEUE_URL=https://sqs.eu-north-1.amazonaws.com/171294308714/demo-sqs
-
-LAMBDA_FUNCTION_NAME_SQS_INVOKE=HelloWorld
-
-LAMBDA_FUNCTION_NAME_SNS_INVOKE=HelloWorld1
-
-LAMBDA_FUNCTION_NAME_DIRECT_INVOKE=HelloWorld2
-
-LAMBDA_FUNCTION_NAME_S3_INVOKE=HelloWorld3
-
-S3_BUCKET_NAME=demomihail-bucket
-
-SNS_TOPIC_ARN=arn:aws:sns:eu-north-1:171294308714:DemoTopic
-
-DYNAMODB_TABLE_NAME=Demotable
 # AWS Configuration
 AWS_REGION=eu-north-1
 AWS_ACCESS_KEY_ID=your-access-key
