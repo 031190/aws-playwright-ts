@@ -1,0 +1,60 @@
+{
+  "name": "lambda-sqs-testing-framework",
+  "version": "1.0.0",
+  "description": "A comprehensive testing framework for AWS Lambda functions triggered via SQS using Playwright and TypeScript",
+  "scripts": {
+    "test": "playwright test",
+    "test:basic": "playwright test tests/framework-basic.spec.ts",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:ui": "playwright test --ui",
+    "lint": "tsc --noEmit",
+    "setup": "playwright install",
+    "localstack:start": "docker run --rm -d --name lambda-testing-localstack -p 4566:4566 -p 4571:4571 -e SERVICES=sqs,lambda,iam -e DEBUG=1 localstack/localstack",
+    "localstack:stop": "docker stop lambda-testing-localstack",
+    "localstack:setup": "./scripts/setup-localstack.sh",
+    "localstack:logs": "docker logs -f lambda-testing-localstack",
+    "localstack:start-compose": "docker-compose up -d localstack",
+    "localstack:stop-compose": "docker-compose down"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "sqs",
+    "testing",
+    "playwright",
+    "typescript",
+    "integration-testing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/aws-lambda": "^8.10.152",
+    "@types/csv-parse": "^1.1.12",
+    "@types/mssql": "^9.1.7",
+    "@types/node": "^24.1.0",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/pg": "^8.15.5",
+    "@types/xlsx": "^0.0.35",
+    "@types/xml2js": "^0.4.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.858.0",
+    "@aws-sdk/client-dynamodb": "^3.859.0",
+    "@aws-sdk/client-lambda": "^3.855.0",
+    "@aws-sdk/client-s3": "^3.859.0",
+    "@aws-sdk/client-sns": "^3.859.0",
+    "@aws-sdk/client-sqs": "^3.855.0",
+    "aws-sdk": "^2.1692.0",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^17.2.1",
+    "mssql": "^11.0.1",
+    "pdf-parse": "^1.1.1",
+    "pg": "^8.16.3",
+    "xlsx": "^0.18.5"
+  }
+}
